@@ -1,15 +1,12 @@
-class MovableObject {
-    x = 50;
-    y = 220;
-    img;
-    height = 220;
-    width = 150;
-    currentImage = 0;
-    imageCache = {};
+class MovableObject extends DrawableObject {
+
     speed = 0.15;
     otherDirection = false;
     speedY = 0;
     acceleration = 2.5;
+    energy = 100;
+    lastHit = 0;
+
 
     applayGravity() {
         setInterval(() => {
@@ -19,25 +16,45 @@ class MovableObject {
         }, 1000 / 25);
     }
 
+
     isAboveGround() {
         return this.y < 140;
     }
 
-    loadImage(path) {
-        this.img = new Image();
-        this.img.src = path;
+
+    isColliding(mo) {
+        return this.x + this.width > mo.x &&
+            this.x + this.height > mo.y &&
+            this.x < mo.x &&
+            this.y < mo.y + mo.height;
     }
 
-    loadImages(arr) {
-        arr.forEach((path) => {
-            let img = new Image();
-            img.src = path;
-            this.imageCache[path] = img;
-        });
+
+    hit() {
+        this.energy -= 5;
+        if (this.energy < 0) {
+            this.energy = 0;
+        } else {
+            this.lastHit = new Date().getTime();
+        }
+
     }
+
+
+    isDead() {
+        return this.energy == 0;
+    }
+
+
+    isHurt() {
+        let timepassed = new Date().getTime() - this.lastHit;
+        timepassed = timepassed / 1000;
+        return timepassed < 1;
+    }
+
 
     playAnimation(Images) {
-        let i = this.currentImage % this.images_Walking.length;
+        let i = this.currentImage % Images.length;
         let path = Images[i];
         this.img = this.imageCache[path];
         this.currentImage++;
@@ -50,12 +67,16 @@ class MovableObject {
         this.walking_sound.play();
     }
 
+
     moveLeft() {
         this.x -= this.speed;
         this.otherDirection = true;
     }
 
+
     jump() {
         this.speedY = 30;
     }
+
+
 }
