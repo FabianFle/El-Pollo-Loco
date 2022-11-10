@@ -3,10 +3,9 @@ let world;
 let keyboard = new Keyboard();
 
 function init() {
+    initLevel1();
     canvas = document.getElementById('canvas');
     world = new World(canvas, keyboard);
-
-    console.log('my Character', world)
 }
 
 window.addEventListener('keydown', (e) => {
@@ -23,7 +22,7 @@ window.addEventListener('keydown', (e) => {
         keyboard.RIGHT = true;
     } 
     if (e.keyCode == 32) {
-        keyboard.D = true;
+        keyboard.SPACE = true;
     }
     if (e.keyCode ==  68) {
         keyboard.D = true;
@@ -50,3 +49,8 @@ window.addEventListener('keyup', (e) => {
         keyboard.D = false;
     }
 });
+
+function startTheGame() {
+    let start = document.getElementById('startScreen');
+    start.classList.add('d-none');
+}

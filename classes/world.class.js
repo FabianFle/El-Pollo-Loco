@@ -7,8 +7,13 @@ class World {
     ctx;
     keyboard;
     camera_x = 0;
-    statusBar = new Statusbar();
-    throwableObject = [new ThrowableObject()];
+    statusbarHealth = new StatusbarHealth();
+    statusbarCoin = new StatusbarCoin();
+    statusbarBottle = new StatusbarBottle();
+    throwableObjects = [];
+
+
+    hit_character_sound = new Audio('audio/hit.mp3');
 
 
     constructor(canvas, keyboard) {
@@ -27,26 +32,49 @@ class World {
 
     run() {
         setInterval(() => {
+            this.checkCollisionsChicken();
+            this.checkCollisionsEndboss();
+        }, 500)
 
-            this.checkCollisions();
+        setInterval(() => {
             this.checkThrowObjects();
-        }, 200);
+            this.checkJumpKill();
+        }, 100)
     }
 
-    checkThrowObjects() {
-        if(this.keyboard.D) {
-            let bottle = new ThrowableObject(this.character.x, this.character.y)
-            this.throwableObject.push(bottle);
-        }
-    }
-
-    checkCollisions() {
+    checkJumpKill() {
         this.level.enemies.forEach((enemy) => {
-            if (this.character.isColliding(enemy)) {
+            if (this.character.isColliding(enemy) && this.character.isAboveGround() && !enemy.dead) {
+                enemy.deadChicken();
+            }
+        })
+    }
+
+    checkCollisionsChicken() {
+        this.level.enemies.forEach((enemy) => {
+            if (this.character.isColliding(enemy) && !enemy.dead) {
                 this.character.hit();
-                this.statusBar.setPercentage(this.character.energy);
+                this.hit_character_sound.play();
+                this.statusbarHealth.setPercentage(this.character.energy)
             }
         });
+    }
+
+    checkCollisionsEndboss() {
+        this.level.endboss.forEach((enemy) => {
+            if (this.character.isColliding(enemy) && !enemy.dead) {
+                this.character.hit();
+                this.hit_character_sound.play();
+                this.statusbarHealth.setPercentage(this.character.energy)
+            }
+        });
+    }
+    
+    checkThrowObjects() {
+        if(this.keyboard.D) {
+            let bottle = new ThrowableObject(this.character.x + 100, this.character.y + 100)
+            this.throwableObjects.push(bottle);
+        }
     }
 
     draw() {
@@ -54,12 +82,16 @@ class World {
         this.ctx.translate(this.camera_x, 0);
         this.addObjectsToMap(this.level.backgroundObjects);
         this.addObjectsToMap(this.level.clouds);
+
         this.ctx.translate(-this.camera_x, 0);
-        this.addToMap(this.statusBar);
+        this.addToMap(this.statusbarHealth);
+        this.addToMap(this.statusbarCoin);
+        this.addToMap(this.statusbarBottle);
         this.ctx.translate(this.camera_x, 0);
+
         this.addToMap(this.character);
         this.addObjectsToMap(this.level.enemies);
-        this.addObjectsToMap(this.throwableObject);
+        this.addObjectsToMap(this.throwableObjects);
         this.ctx.translate(-this.camera_x, 0);
 
         let self = this;

@@ -28,9 +28,15 @@ class MovableObject extends DrawableObject {
 
     isColliding(mo) {
         return this.x + this.width > mo.x &&
-            this.x + this.height > mo.y &&
-            this.x < mo.x &&
+            this.y + this.height > mo.y &&
+            this.x < mo.x + mo.width &&
             this.y < mo.y + mo.height;
+    }
+
+    isJumpingOn(mo) {
+        return this.x + this.width > mo.x &&
+        this.x < mo.x + mo.width &&
+        this.y + this.height > mo.y
     }
 
 
@@ -41,7 +47,6 @@ class MovableObject extends DrawableObject {
         } else {
             this.lastHit = new Date().getTime();
         }
-
     }
 
 
@@ -63,6 +68,13 @@ class MovableObject extends DrawableObject {
         this.img = this.imageCache[path];
         this.currentImage++;
     }
+
+    // playSzene(Images) {
+    //     let i = this.currentImage;
+    //     let path = Images[i];
+    //     this.img = this.imageCache[path];
+    //     this.currentImage++;
+    // }
 
 
     moveRight() {

@@ -4,6 +4,7 @@ class DrawableObject {
     y = 220;
     height = 220;
     width = 150;
+
     img;
     imageCache = {};
     currentImage = 0;
@@ -26,19 +27,14 @@ class DrawableObject {
 
 
 
-    // draw(ctx) {
-    //     try {
-    //         ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
-    //     } catch (error) {
-    //         console.log(error, this.img);
-    //     }
-    // }
-
-
     draw(ctx) {
-        ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
+        try {
+            ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
+        } catch (error) {
+            console.log(error, 'Error loading Image', this.img);
+        }
     }
-
+    
 
     drawFrame(ctx) {
 
