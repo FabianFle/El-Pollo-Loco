@@ -33,7 +33,7 @@ class World {
     run() {
         setInterval(() => {
             this.checkCollisionsChicken();
-            this.checkCollisionsEndboss();
+            // this.checkCollisionsEndboss();
         }, 500)
 
         setInterval(() => {
@@ -60,15 +60,15 @@ class World {
         });
     }
 
-    checkCollisionsEndboss() {
-        this.level.endboss.forEach((enemy) => {
-            if (this.character.isColliding(enemy) && !enemy.dead) {
-                this.character.hit();
-                this.hit_character_sound.play();
-                this.statusbarHealth.setPercentage(this.character.energy)
-            }
-        });
-    }
+    // checkCollisionsEndboss() {
+    //     this.level.endboss.forEach((enemy) => {
+    //         if (this.character.isColliding(enemy) && !enemy.dead) {
+    //             this.character.hit();
+    //             this.hit_character_sound.play();
+    //             this.statusbarHealth.setPercentage(this.character.energy)
+    //         }
+    //     });
+    // }
     
     checkThrowObjects() {
         if(this.keyboard.D) {

@@ -6,7 +6,7 @@ class MovableObject extends DrawableObject {
     acceleration = 2.5;
     energy = 100;
     lastHit = 0;
-
+    lastmovmeent = 0;
 
     applayGravity() {
         setInterval(() => {
@@ -35,8 +35,8 @@ class MovableObject extends DrawableObject {
 
     isJumpingOn(mo) {
         return this.x + this.width > mo.x &&
-        this.x < mo.x + mo.width &&
-        this.y + this.height > mo.y
+            this.x < mo.x + mo.width &&
+            this.y + this.height > mo.y
     }
 
 
@@ -69,12 +69,13 @@ class MovableObject extends DrawableObject {
         this.currentImage++;
     }
 
-    // playSzene(Images) {
-    //     let i = this.currentImage;
-    //     let path = Images[i];
-    //     this.img = this.imageCache[path];
-    //     this.currentImage++;
-    // }
+    
+    playAnimationOne(Images) {
+        let i = this.currentImage;
+        let path = Images[i];
+        this.img = this.imageCache[path];
+        this.currentImage++;
+    }
 
 
     moveRight() {
@@ -94,5 +95,11 @@ class MovableObject extends DrawableObject {
         this.speedY = 30;
     }
 
+    
+    isHurtEndboss() {
+        let timepassed = new Date().getTime() - this.lastHit;  // Difference in milliseconds.
+        timepassed = timepassed / 1000;  // Difference in seconds.
+        return timepassed < 0.5;
+    }
 
 }

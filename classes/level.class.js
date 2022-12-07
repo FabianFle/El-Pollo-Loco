@@ -1,21 +1,39 @@
 class Level {
 
     enemies;
-    // smallEnemies;
+    endboss;
     clouds;
+    backgroundObjects; 
+    coins;
+    bottles;
+    hearts;
+    level_end_x = 3000;
+
+    constructor(enemies, endboss, clouds, bottles, backgroundObjects, coins, bottles, hearts) {
+        this.enemies = enemies;
+        this.endboss = endboss;
+        this.clouds = clouds;
+        this.backgroundObjects = backgroundObjects;
+        this.coins = coins;
+        this.bottles = bottles;
+        this.hearts = hearts;
+    }
+
+
+    // enemies;
+    // clouds;
+    // backgroundObjects; 
     // coins;
     // bottles;
-    // hearts;
-    backgroundObjects; 
-    level_end_x = 2200;
+    // // hearts;
+    // level_end_x = 3000;
 
-    constructor(enemies, clouds, backgroundObjects) {
-        this.enemies = enemies;
-        // this.smallEnemies = smallEnemies;
-        this.clouds = clouds;
-        // this.coins = coins;
-        // this.bottles = bottles;
-        // this.hearts = hearts;
-        this.backgroundObjects = backgroundObjects;
-    }
+    // constructor(enemies, clouds, bottles, backgroundObjects, coins,) {
+    //     this.enemies = enemies;
+    //     this.clouds = clouds;
+    //     this.backgroundObjects = backgroundObjects;
+    //     this.coins = coins;
+    //     this.bottles = bottles;
+    //     // this.hearts = hearts;
+    // }
 }
