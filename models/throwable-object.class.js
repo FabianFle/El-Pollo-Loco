@@ -29,20 +29,12 @@ class ThrowableObject extends MovableObject {
     }
 
 
-    /**
-     * This Function is basically used to animate and move the Throwing bottle.
-     * 
-     */
     throwBottle() {
         this.addGravityToBottle();
         this.animateBottle();
     }
 
 
-    /**
-     * This Function add Gravity around to Throw the Bottle.
-     * 
-     */
     addGravityToBottle() {
         this.speedY = 20;
         this.addGravity();
@@ -57,10 +49,6 @@ class ThrowableObject extends MovableObject {
     }
 
 
-    /**
-     * This Function animate the Bottle so that it turns.
-     * 
-     */
     animateBottle() {
         setStopableInterval(() => {
             if (!world.level.endboss[0].isHurtEndboss()) {

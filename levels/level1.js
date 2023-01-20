@@ -1,6 +1,5 @@
 let level1;
 
-
 /**
  * This Function init the whole Level.
  * 
@@ -17,11 +16,9 @@ function initLevel() {
             new SmallChicken(),
         ],
 
-
         [
             new Endboss(),
         ],
-
 
         [
             new Cloud('img/5_background/layers/4_clouds/1.png', 100),
@@ -35,7 +32,6 @@ function initLevel() {
             new Cloud('img/5_background/layers/4_clouds/1.png', 4000),
             new Cloud('img/5_background/layers/4_clouds/1.png', 4500),
         ],
-
 
         [
             new BackgroundObject('img/5_background/layers/air.png', -819),
@@ -74,7 +70,6 @@ function initLevel() {
             new BackgroundObject('img/5_background/layers/1_first_layer/2.png', 819 * 5),
         ],
 
-
         [
             new Coin('img/8_coin/coin_1.png'),
             new Coin('img/8_coin/coin_1.png'),
@@ -96,8 +91,8 @@ function initLevel() {
             new Coin('img/8_coin/coin_1.png'),
             new Coin('img/8_coin/coin_1.png'),
             new Coin('img/8_coin/coin_1.png'),
+            new Coin('img/8_coin/coin_1.png'),
         ],
-
 
         [
             new Bottle('img/6_salsa_bottle/1_salsa_bottle_on_ground.png', 350),

@@ -11,10 +11,6 @@ class Keyboard {
     }
 
 
-    /**
-    * This Function triggered a key event listener, by triggered keystroke and release the Button.
-    * 
-    */
     eventKeyboardBtns() {
         window.addEventListener('keydown', (event) => {
             if (event.keyCode == 37) {
@@ -71,10 +67,6 @@ class Keyboard {
     }
 
 
-    /**
-     * This Function triggered a key event listener, by triggered keystroke and release the Button, only for Touchpads.
-     * 
-     */
     eventTouchpadBtns() {
         setTimeout(() => {
             document.getElementById('btnMobileLeft').addEventListener('touchstart', (event) => {

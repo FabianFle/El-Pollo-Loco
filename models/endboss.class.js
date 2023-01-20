@@ -62,10 +62,6 @@ class Endboss extends MovableObject {
     }
 
 
-    /**
-     * This Function Animate basically the Enboss Class.
-     * 
-     */
     animateEndboss() {
         let i = 0;
         setStopableInterval(() => {
@@ -80,11 +76,6 @@ class Endboss extends MovableObject {
     }
 
 
-    /**
-     * This Function Play the Endboss with different Animations.
-     * 
-     * @param {number} i - The Current number for Play the Intro Animation from Endboss. 
-     */
     playEndboss(i) {
         if (i < 15) {
             this.playAnimationMo(this.imagesAlertEndboss);
@@ -103,10 +94,6 @@ class Endboss extends MovableObject {
     }
 
 
-    /**
-     * This Function show the Game Over Screen, after the Endboss was beaten.
-     * 
-     */
     gameIsWin() {
         audioGameWin.play();
         clearAllIntervals();
@@ -115,10 +102,6 @@ class Endboss extends MovableObject {
     }
 
 
-    /**
-     * This Function play the Endboss Backgroundmusic while the Bossfight.
-     * 
-     */
     playBackgroundMusicEndboss() {
         audioBackgroundMusicEndboss.volume = 0.2;
         audioBackgroundMusicEndboss.play();
@@ -127,46 +110,18 @@ class Endboss extends MovableObject {
     }
 
 
-    /**
-     * This Function triggers the Intro Animation from the Enboss Class.
-     * 
-     * @returns {boolean} Return True or False, depending on the Character Class is near enough to the Endboss Class.
-     */
     endbossReached() {
         return world.character.x > 3800 && !this.hadFirstContact;
     }
 
 
-    /**
-     * This Function use to begin the Boss fight.
-     * 
-     * @returns {boolean} Return True or False, depending on the Character Class is near enough to the Endboss Class.
-     */
     endbossFightBegins() {
         return world.character.x > world.level.endboss[0].x - 1000;
     }
 
 
-    /**
-     * This Function is used with it, the Endboss Class rush forward when he gets hit.            
-     * 
-     * @returns {speedIncreaseThroughHit} Return the Value of the increased Speed.
-     */
     endBossRushForward() {
         let speedIncreaseThroughHit = world.level.endboss[0].x -= this.speedThroughHit;
         return speedIncreaseThroughHit;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-

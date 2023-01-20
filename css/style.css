@@ -186,7 +186,7 @@ canvas {
     height: 32px;
     position: absolute;
     top: 13px;
-    right: 134px;
+    right: 89px;
 }
 
 
@@ -286,22 +286,6 @@ canvas {
 
 
 .arrowBack:hover {
-    cursor: pointer;
-    transition: all 225ms ease-in-out;
-    transform: scale(1.2);
-}
-
-
-.infoIcon {
-    width: 32px;
-    height: 32px;
-    position: absolute;
-    top: 12px;
-    right: 80px;
-}
-
-
-.infoIcon:hover {
     cursor: pointer;
     transition: all 225ms ease-in-out;
     transform: scale(1.2);

@@ -84,19 +84,12 @@ class Character extends MovableObject {
     }
 
 
-    /**
-     * This Function basically Animate the Character Class.
-     */
     animateCharacter() {
         setStopableInterval(() => this.characterMove(), 1000 / 25);
         setStopableInterval(() => this.playCharacter(), 150);
     }
 
 
-    /**
-     * This Function is used to animate Character Class, for example Movement and Jump.
-     * 
-     */
     characterMove() {
         if (this.characterCanMoveRight())
             this.characterMoveRight();
@@ -108,18 +101,11 @@ class Character extends MovableObject {
     }
 
 
-    /**
-     * This Function scroll the Map, with the Character Class, if he is moving.
-     */
     scrollTheMap() {
         this.world.cameraX = -this.x + 30;
     }
 
 
-    /**
-     * This Function Play the Animation from the Character Class for example, if he is Jumping.
-     * 
-     */
     playCharacter() {
         if (this.isHurtCharacter()) {
             this.characterHurt()
@@ -136,20 +122,11 @@ class Character extends MovableObject {
     }
 
 
-    /**
-     * This Function check, if the right Button is pressed and the Character Class move right.
-     * 
-     * @returns {boolean} Return True or False, if the right Button to press.  
-     */
     characterCanMoveRight() {
         return this.world.keyboard.right && this.x < this.world.level.levelEndX;
     }
 
 
-    /**
-     * This Function is used to move the Character Class right and play Sound while the Character Class is moving right. 
-     * 
-     */
     characterMoveRight() {
         this.otherDirection = false;
         this.moveRight();
@@ -157,20 +134,11 @@ class Character extends MovableObject {
     }
 
 
-    /**
-     * This Function check, if the left Button is pressed and the Character Class move left. 
-     * 
-     * @returns {boolean} Return True or False, if the left Button to press. 
-     */
     characterCanMoveLeft() {
         return this.world.keyboard.left && this.x > 0;
     }
 
 
-    /**
-    * This Function is used to move the Character Class left and play Sound while the Character Class is moving left. 
-    * 
-    */
     characterMoveLeft() {
         this.otherDirection = true;
         this.moveLeft();
@@ -178,20 +146,11 @@ class Character extends MovableObject {
     }
 
 
-    /**
-     * This Function check, if the space Button is pressed and the Character Class jump. 
-     * 
-     * @returns {boolean} Return True or False, if the space Button to press.
-     */
     characterCanJump() {
         return this.world.keyboard.space && !this.isAboveGround();
     }
 
 
-    /**
-    * This Function is used to jump the Character Class and play Sound while the Character Class is jumping. 
-    * 
-    */
     characterJump() {
         this.jump();
         audioJumpCharacter.play();
@@ -199,29 +158,17 @@ class Character extends MovableObject {
     }
 
 
-    /**
-     * This Function is used to in order to the Character Class comes up while jumping.
-     * 
-     */
     jump() {
         this.speedY = 30;
     }
 
 
-    /**
-     * This Function play the Hurt Animation from the Character Class, as soon as he take damage.
-     * 
-     */
     characterHurt() {
         this.playAnimationMo(this.imagesHurtCharacter);
         auidoHurtCharacter.play();
     }
 
 
-    /**
-     * This Function show the Game Over Screen, as soon as the Character Class die.
-     * 
-     */
     gameIsLost() {
         this.playAnimationMo(this.imagesDeadCharacter);
         audioGameLost.play();
@@ -231,11 +178,6 @@ class Character extends MovableObject {
     }
 
 
-    /**
-     * This Function show the amount of time that has passed since the last movement.
-     * 
-     * @returns {boolean} Return True or False, if the timepassed is longer than 1 second.
-     */
     characterSleep() {
         let timepassed = new Date().getTime() - this.characterLastMovement;
         timepassed = timepassed / 1000;
@@ -243,36 +185,21 @@ class Character extends MovableObject {
     }
 
 
-    /**
-     * This Function play the Jumping Animation from the Character Class, as soon as he jumpe.
-     */
     characterJumpingAnimation() {
         this.playAnimationMo(this.imagesJumpingCharacter);
     }
 
 
-    /**
-     * This Function there's again the Unix Timestamp.
-     * 
-     */
     getUnixTimeStamp() {
         this.characterLastMovement = new Date().getTime();
     }
 
 
-    /**
-     * This Function play the move left Animation from the Character Class, as soon as he move left.
-     * 
-     */
     characterMoveAnimation() {
         this.playAnimationMo(this.imagesWalkingCharacter);
     }
 
 
-    /**
-     * This Function play the Sleep Animation from the Character Class.
-     * 
-     */
     characterSleepAnimation() {
         audioSleepCharacter.volume = 0.5;
         audioSleepCharacter.play();
