@@ -1,18 +1,12 @@
 @font-face {
-    font-family: 'Anton';
+    font-family: 'Permanent Marker';
     font-style: normal;
     font-weight: 400;
-    src: url('./fonts/anton-v23-latin-regular.eot');
-    /* IE9 Compat Modes */
+    src: url('/fonts/permanent-marker-v16-latin-regular.eot'); /* IE9 Compat Modes */
     src: local(''),
-        url('./fonts/anton-v23-latin-regular.eot?#iefix') format('embedded-opentype'),
-        /* IE6-IE8 */
-        url('./fonts/anton-v23-latin-regular.woff2') format('woff2'),
-        /* Super Modern Browsers */
-        url('./fonts/anton-v23-latin-regular.woff') format('woff'),
-        /* Modern Browsers */
-        url('./fonts/anton-v23-latin-regular.ttf') format('truetype'),
-        /* Safari, Android, iOS */
-        url('./fonts/anton-v23-latin-regular.svg#Anton') format('svg');
-    /* Legacy iOS */
-}
+         url('/fonts/permanent-marker-v16-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('/fonts/permanent-marker-v16-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+         url('/fonts/permanent-marker-v16-latin-regular.woff') format('woff'), /* Modern Browsers */
+         url('/fonts/permanent-marker-v16-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('/fonts/permanent-marker-v16-latin-regular.svg#PermanentMarker') format('svg'); /* Legacy iOS */
+  }
