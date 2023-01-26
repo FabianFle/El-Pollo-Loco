@@ -52,7 +52,6 @@ function hideElementsInStartScreen() {
 
 
 function showSoundBtns() {
-    document.getElementById('audioOnIcon').classList.remove('d-none');
     document.getElementById('audioOffIcon').classList.remove('d-none');
 }
 
@@ -80,7 +79,6 @@ function restartGame() {
     document.getElementById('winScreenContainer').classList.add('d-none');
     document.getElementById('startScreen').classList.add('d-none');
     document.getElementById('audioOffIcon').classList.remove('d-none');
-    document.getElementById('audioOnIcon').classList.remove('d-none');
     document.getElementById('enterFullscreenIcon').classList.remove('d-none');
     closeFullscreen();
     clearAllIntervals();
@@ -200,22 +198,6 @@ function removeStylesForFullScreen() {
 
 
 function turnSoundOff() {
-    audioBackgroundMusicEndboss.muted = true;
-    audioBackgroundMusicInGame.muted = true;
-    audioDeadChicken.muted = true;
-    audioWalkCharacter.muted = true;
-    audioJumpCharacter.muted = true;
-    auidoHurtCharacter.muted = true;
-    audioGameLost.muted = true;
-    audioCoinCollected.muted = true;
-    audioBottleCollected.muted = true;
-    audioThrowBottle.muted = true;
-    audioSplashBottle.muted = true;
-    audioSleepCharacter.muted = true;
-}
-
-
-function turnSoundOn() {
     audioBackgroundMusicEndboss.muted = false;
     audioBackgroundMusicInGame.muted = false;
     audioDeadChicken.muted = false;
@@ -228,6 +210,27 @@ function turnSoundOn() {
     audioThrowBottle.muted = false;
     audioSplashBottle.muted = false;
     audioSleepCharacter.muted = false;
+    document.getElementById('audioOnIcon').classList.remove('d-none');
+    document.getElementById('audioOffIcon').classList.add('d-none');
+}
+
+
+function turnSoundOn() {
+    audioBackgroundMusicEndboss.muted = true;
+    audioBackgroundMusicInGame.muted = true;
+    audioDeadChicken.muted = true;
+    audioWalkCharacter.muted = true;
+    audioJumpCharacter.muted = true;
+    auidoHurtCharacter.muted = true;
+    audioGameLost.muted = true;
+    audioCoinCollected.muted = true;
+    audioBottleCollected.muted = true;
+    audioThrowBottle.muted = true;
+    audioSplashBottle.muted = true;
+    audioSleepCharacter.muted = true;
+    document.getElementById('audioOffIcon').classList.remove('d-none');
+    document.getElementById('audioOnIcon').classList.add('d-none');
+
 }
 
 

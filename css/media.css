@@ -14,7 +14,7 @@
     .audioOffIcon {
         width: 40px;
         height: 40px;
-        right: 110px;
+        right: 61px;
     }
 
     .audioOnIcon {
@@ -24,6 +24,11 @@
     }
 
     .enterFullscreenIcon {
+        width: 30px;
+        height: 30px;
+    }
+
+    .exitFullscreenIcon{
         width: 30px;
         height: 30px;
     }
@@ -47,7 +52,7 @@
     .audioOffIcon {
         width: 35px;
         height: 35px;
-        right: 95px;
+        right: 51px;
     }
 
     .audioOnIcon {
@@ -57,6 +62,12 @@
     }
 
     .enterFullscreenIcon {
+        width: 25px;
+        height: 25px;
+        right: 12px;
+    }
+
+    .exitFullscreenIcon{
         width: 25px;
         height: 25px;
         right: 12px;
@@ -79,7 +90,7 @@
     .audioOffIcon {
         width: 30px;
         height: 30px;
-        right: 82px;
+        right: 46px;
     }
 
     .audioOnIcon {
@@ -89,6 +100,12 @@
     }
 
     .enterFullscreenIcon {
+        width: 22px;
+        height: 22px;
+        right: 10px;
+    }
+
+    .exitFullscreenIcon {
         width: 22px;
         height: 22px;
         right: 10px;
@@ -111,7 +128,7 @@
     .audioOffIcon {
         width: 27px;
         height: 27px;
-        right: 77px;
+        right: 43px;
     }
 
     .audioOnIcon {
@@ -121,6 +138,13 @@
     }
 
     .enterFullscreenIcon {
+        width: 20px;
+        height: 20px;
+        right: 10px;
+        top: 12px;
+    }
+
+    .exitFullscreenIcon {
         width: 20px;
         height: 20px;
         right: 10px;
@@ -142,7 +166,7 @@
     .audioOffIcon {
         width: 22px;
         height: 22px;
-        right: 65px;
+        right: 39px;
     }
 
     .audioOnIcon {
@@ -152,6 +176,13 @@
     }
 
     .enterFullscreenIcon {
+        width: 17px;
+        height: 17px;
+        right: 10px;
+        top: 11px;
+    }
+
+    .exitFullscreenIcon {
         width: 17px;
         height: 17px;
         right: 10px;
