@@ -5,7 +5,6 @@ let audioBackgroundMusicInGame = new Audio('audio/backgroundMusic.mp3');
 let audioWalkCharacter = new Audio('audio/running.mp3');
 let audioJumpCharacter = new Audio('audio/jump.mp3');
 let auidoHurtCharacter = new Audio('audio/hit.mp3');
-let audioSleepCharacter = new Audio('audio/snoring.mp3');
 let audioGameLost = new Audio('audio/gameOver.mp3');
 let audioCoinCollected = new Audio('audio/collectcoinCoins.mp3');
 let audioBottleCollected = new Audio('audio/collectcoinThroebel.mp3');
@@ -171,6 +170,8 @@ function addStylesForFullScreen() {
     document.getElementById('canvas').classList.add('canvasFullScreen');
     document.getElementById('winScreenContainer').classList.add('winScreenContainerFullScreen', 'winScreenContainerFullScreenh2', 'imgTrophyContainerFullScreenimg');
     document.getElementById('gameOverScreen').classList.add('gameOverScreenFullScreen');
+    document.getElementById('positionAbsoluteLeft').classList.add('d-none');
+    document.getElementById('positionAbsoluteRight').classList.add('d-none');
 }
 
 
@@ -194,6 +195,8 @@ function removeStylesForFullScreen() {
     document.getElementById('canvas').classList.remove('canvasFullScreen');
     document.getElementById('winScreenContainer').classList.remove('winScreenContainerFullScreen', 'winScreenContainerFullScreenh2', 'imgTrophyContainerFullScreenimg');
     document.getElementById('gameOverScreen').classList.remove('gameOverScreenFullScreen');
+    document.getElementById('positionAbsoluteLeft').classList.remove('d-none');
+    document.getElementById('positionAbsoluteRight').classList.remove('d-none');
 }
 
 
@@ -209,7 +212,6 @@ function turnSoundOff() {
     audioBottleCollected.muted = false;
     audioThrowBottle.muted = false;
     audioSplashBottle.muted = false;
-    audioSleepCharacter.muted = false;
     document.getElementById('audioOnIcon').classList.remove('d-none');
     document.getElementById('audioOffIcon').classList.add('d-none');
 }
@@ -227,7 +229,6 @@ function turnSoundOn() {
     audioBottleCollected.muted = true;
     audioThrowBottle.muted = true;
     audioSplashBottle.muted = true;
-    audioSleepCharacter.muted = true;
     document.getElementById('audioOffIcon').classList.remove('d-none');
     document.getElementById('audioOnIcon').classList.add('d-none');
 

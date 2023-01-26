@@ -201,8 +201,6 @@ class Character extends MovableObject {
 
 
     characterSleepAnimation() {
-        audioSleepCharacter.volume = 0.5;
-        audioSleepCharacter.play();
         this.playAnimationMo(this.imagesLongIdleCharacter);
     }
 }
