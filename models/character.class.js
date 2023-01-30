@@ -180,7 +180,8 @@ class Character extends MovableObject {
 
     characterSleep() {
         let timepassed = new Date().getTime() - this.characterLastMovement;
-        timepassed = timepassed / 1000;
+        timepassed = timepassed / 2000;
+        console.log(timepassed, "=======", this.characterLastMovement);
         return timepassed > 1.5;
     }
 

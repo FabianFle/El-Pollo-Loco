@@ -30,7 +30,6 @@ class MovableObject extends DrawableObject {
             this.y + this.offset.top < mo.y + mo.height - mo.offset.bottom;       //      bottom > top =>   Collision top  
     }
 
-
     hitCharacter() {
         this.energy -= 10;
         if (this.energy < 0) {

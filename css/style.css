@@ -357,7 +357,7 @@ canvas {
 .winScreenContainer {
     width: 820px;
     height: 480px;
-    background-color: #795548;
+    background-color: #79554880;
 }
 
 
@@ -373,7 +373,7 @@ canvas {
 .winScreenContainer .btnContainer {
     display: flex;
     justify-content: space-between;
-    margin-top: 169px;
+    margin-top: 59px;
 }
 
 
@@ -384,7 +384,7 @@ canvas {
 
 
 .imgTrophyContainer img {
-    width: 180px;
+    width: 300px;
     padding-top: 15px;
     animation: scale-in-center 225ms cubic-bezier(0.250, 0.460, 0.450, 0.940) 100ms both;
 }
