@@ -12,6 +12,6 @@ class StatusbarEnbossHealth extends Statusbar {
 
     constructor() {
         super().loadImages(this.imagesStatusbar);
-        this.setPercentage(100);
+        this.setPercentage(50);
     }
 }

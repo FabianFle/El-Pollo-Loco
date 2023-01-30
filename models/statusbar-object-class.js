@@ -1,6 +1,6 @@
 class Statusbar extends DrawableObject {
     width = 250;
-    percentage = 100;
+    percentage = 50;
 
 
     setPercentage(percentage) {
@@ -11,15 +11,15 @@ class Statusbar extends DrawableObject {
 
 
     showImageIndex(percentage) {
-        if (percentage == 100) {
+        if (percentage == 50) {
             return 5;
-        } else if (percentage > 80) {
+        } else if (percentage >= 40) {
             return 4;
-        } else if (percentage > 60) {
+        } else if (percentage >= 30) {
             return 3;
-        } else if (percentage > 40) {
+        } else if (percentage >= 20) {
             return 2;
-        } else if (percentage > 20) {
+        } else if (percentage >= 10) {
             return 1;
         } else {
             return 0;

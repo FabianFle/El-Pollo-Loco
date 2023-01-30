@@ -3,7 +3,7 @@ class MovableObject extends DrawableObject {
     otherDirection = false;
     speedY = 0;
     acceleration = 3;
-    energy = 105;
+    energy = 50;
     lastHit = 0;
     progessCoinBar = 0;
     progessBottleBar = 0;
@@ -41,7 +41,7 @@ class MovableObject extends DrawableObject {
 
 
     hitEndboss() {
-        this.energy -= 15;
+        this.energy -= 10;
         if (this.energy < 0) {
             this.energy = 0
         } else {
