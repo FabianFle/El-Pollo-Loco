@@ -109,8 +109,10 @@ class Character extends MovableObject {
     playCharacter() {
         if (this.isHurtCharacter()) {
             this.characterHurt()
+            this.getUnixTimeStamp();
         } else if (this.isNotAboveGround()) {
             this.characterJumpingAnimation();
+            this.getUnixTimeStamp();
         } else if (this.characterCanMoveRight() || this.characterCanMoveLeft()) {
             this.getUnixTimeStamp();
             this.characterMoveAnimation();
@@ -181,7 +183,6 @@ class Character extends MovableObject {
     characterSleep() {
         let timepassed = new Date().getTime() - this.characterLastMovement;
         timepassed = timepassed / 2000;
-        console.log(timepassed, "=======", this.characterLastMovement);
         return timepassed > 1.5;
     }
 

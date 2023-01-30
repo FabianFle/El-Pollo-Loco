@@ -3,7 +3,7 @@ class MovableObject extends DrawableObject {
     otherDirection = false;
     speedY = 0;
     acceleration = 3;
-    energy = 100;
+    energy = 105;
     lastHit = 0;
     progessCoinBar = 0;
     progessBottleBar = 0;
@@ -41,7 +41,7 @@ class MovableObject extends DrawableObject {
 
 
     hitEndboss() {
-        this.energy -= 20;
+        this.energy -= 15;
         if (this.energy < 0) {
             this.energy = 0
         } else {
@@ -66,15 +66,15 @@ class MovableObject extends DrawableObject {
 
 
     isHurtCharacter() {
-        let timepassed = new Date().getTime() - this.lastHit;  // Difference in milliseconds.
-        timepassed = timepassed / 1000;   // Difference in seconds.
+        let timepassed = new Date().getTime() - this.lastHit;
+        timepassed = timepassed / 1000;
         return timepassed < 1;
     }
 
 
     isHurtEndboss() {
-        let timepassed = new Date().getTime() - this.lastHit;  // Difference in milliseconds.
-        timepassed = timepassed / 1000;  // Difference in seconds.
+        let timepassed = new Date().getTime() - this.lastHit;
+        timepassed = timepassed / 1000;
         return timepassed < 0.5;
     }
 
