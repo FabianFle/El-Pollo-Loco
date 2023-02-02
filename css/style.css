@@ -89,7 +89,6 @@ canvas {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 1;
 }
 
 
@@ -363,10 +362,7 @@ canvas {
 .winScreenContainer {
     width: 820px;
     height: 480px;
-    background-image: url("img/bg.png");
-    background-color: #79554879;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-color: #ffffff29;
     border-radius: 20px;
 }
 
@@ -413,6 +409,10 @@ canvas {
 .winScreenContainerFullScreen {
     width: 100%;
     height: 100vh;
+    background-color: rgba(255, 166, 0, 0.459);
+    background-image: url("../img/bg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 

@@ -9,6 +9,27 @@
     }
 }
 
+@media (max-width: 1260px) {
+    .winScreenContainer .btnContainer {
+        justify-content: space-between;
+        flex-direction: row;
+    }
+
+    .btnRestart {
+        margin-bottom: 0px;
+    }
+
+    .winScreenContainerFullScreen h2 {
+        padding-top: 300px;
+    }
+}
+
+@media (max-width: 850px) {
+    .winScreenContainerFullScreen h2 {
+        padding-top: 350px;
+    }
+}
+
 
 @media (max-width: 690px) {
     .audioOffIcon {
@@ -28,7 +49,7 @@
         height: 30px;
     }
 
-    .exitFullscreenIcon{
+    .exitFullscreenIcon {
         width: 30px;
         height: 30px;
     }
@@ -44,6 +65,13 @@
 
     .positionAbsoluteRight {
         bottom: 7px;
+    }
+}
+
+
+@media (max-width: 620px) {
+    .winScreenContainerFullScreen h2 {
+        padding-top: 380px;
     }
 }
 
@@ -67,7 +95,7 @@
         right: 12px;
     }
 
-    .exitFullscreenIcon{
+    .exitFullscreenIcon {
         width: 25px;
         height: 25px;
         right: 12px;
@@ -82,6 +110,24 @@
 
     .positionAbsoluteLeft, .positionAbsoluteRight {
         bottom: 4px;
+    }
+
+    .winScreenContainerFullScreen h2 {
+        font-size: 30px;
+    }
+
+    .btnMainMenu {
+        width: 150px;
+        font-size: 15px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .btnRestart {
+        width: 150px;
+        font-size: 15px;
+        padding-left: 15px;
+        padding-right: 15px;
     }
 }
 
@@ -364,7 +410,7 @@
     }
 
     .imgTrophyContainer img {
-        width: 160px;
+        width: 240px;
     }
 
     .winScreenContainer .btnContainer {

@@ -231,7 +231,6 @@ function turnSoundOn() {
     audioSplashBottle.muted = true;
     document.getElementById('audioOffIcon').classList.remove('d-none');
     document.getElementById('audioOnIcon').classList.add('d-none');
-
 }
 
 

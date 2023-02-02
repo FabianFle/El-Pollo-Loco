@@ -103,17 +103,6 @@ function createCoins() {
         new Coin('img/8_coin/coin_1.png'),
         new Coin('img/8_coin/coin_1.png'),
         new Coin('img/8_coin/coin_1.png'),
-        new Coin('img/8_coin/coin_1.png'),
-        new Coin('img/8_coin/coin_1.png'),
-        new Coin('img/8_coin/coin_1.png'),
-        new Coin('img/8_coin/coin_1.png'),
-        new Coin('img/8_coin/coin_1.png'),
-        new Coin('img/8_coin/coin_1.png'),
-        new Coin('img/8_coin/coin_1.png'),
-        new Coin('img/8_coin/coin_1.png'),
-        new Coin('img/8_coin/coin_1.png'),
-        new Coin('img/8_coin/coin_1.png'),
-        new Coin('img/8_coin/coin_1.png'),
     ]
 }
 
@@ -122,11 +111,6 @@ function createBottle() {
         new Bottle('img/6_salsa_bottle/1_salsa_bottle_on_ground.png', 350),
         new Bottle('img/6_salsa_bottle/1_salsa_bottle_on_ground.png', 350),
         new Bottle('img/6_salsa_bottle/1_salsa_bottle_on_ground.png', 350),
-        new Bottle('img/6_salsa_bottle/2_salsa_bottle_on_ground.png', 350),
-        new Bottle('img/6_salsa_bottle/2_salsa_bottle_on_ground.png', 350),
-        new Bottle('img/6_salsa_bottle/2_salsa_bottle_on_ground.png', 350),
-        new Bottle('img/6_salsa_bottle/2_salsa_bottle_on_ground.png', 350),
-        new Bottle('img/6_salsa_bottle/2_salsa_bottle_on_ground.png', 350),
         new Bottle('img/6_salsa_bottle/2_salsa_bottle_on_ground.png', 350),
         new Bottle('img/6_salsa_bottle/2_salsa_bottle_on_ground.png', 350),
     ]
