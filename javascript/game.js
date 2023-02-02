@@ -51,7 +51,7 @@ function hideElementsInStartScreen() {
 
 
 function showSoundBtns() {
-    document.getElementById('audioOffIcon').classList.remove('d-none');
+    document.getElementById('audioOnIcon').classList.remove('d-none');
 }
 
 

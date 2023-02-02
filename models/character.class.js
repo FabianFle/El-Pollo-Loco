@@ -102,7 +102,7 @@ class Character extends MovableObject {
 
 
     scrollTheMap() {
-        this.world.cameraX = -this.x + 30;
+        this.world.cameraX = -this.x + 130;
     }
 
 
