@@ -77,7 +77,6 @@ function restartGame() {
     document.getElementById('gameOverScreenContainer').classList.add('d-none');
     document.getElementById('winScreenContainer').classList.add('d-none');
     document.getElementById('startScreen').classList.add('d-none');
-    document.getElementById('audioOffIcon').classList.remove('d-none');
     document.getElementById('enterFullscreenIcon').classList.remove('d-none');
     closeFullscreen();
     clearAllIntervals();
@@ -208,6 +207,7 @@ function turnSoundOff() {
     audioJumpCharacter.muted = false;
     auidoHurtCharacter.muted = false;
     audioGameLost.muted = false;
+    audioGameWin.muted = false;
     audioCoinCollected.muted = false;
     audioBottleCollected.muted = false;
     audioThrowBottle.muted = false;
@@ -225,6 +225,7 @@ function turnSoundOn() {
     audioJumpCharacter.muted = true;
     auidoHurtCharacter.muted = true;
     audioGameLost.muted = true;
+    audioGameWin.muted = true;
     audioCoinCollected.muted = true;
     audioBottleCollected.muted = true;
     audioThrowBottle.muted = true;
@@ -232,6 +233,35 @@ function turnSoundOn() {
     document.getElementById('audioOffIcon').classList.remove('d-none');
     document.getElementById('audioOnIcon').classList.add('d-none');
 }
+
+
+// function toggleMute() {
+//     toggleNoSoundBtn();
+//     audioBackgroundMusicEndboss.muted = !audioBackgroundMusicEndboss.muted;
+//     audioBackgroundMusicInGame.muted = !audioBackgroundMusicInGame.muted;
+//     audioDeadChicken.muted = !audioDeadChicken.muted;
+//     audioWalkCharacter.muted = !audioWalkCharacter.muted;
+//     audioJumpCharacter.muted = !audioJumpCharacter.muted;
+//     auidoHurtCharacter.muted = !auidoHurtCharacter.muted;
+//     audioGameLost.muted = !audioGameLost.muted;
+//     audioGameWin.muted = !audioGameWin.muted;
+//     audioCoinCollected.muted = !audioCoinCollected.muted;
+//     audioBottleCollected.muted = !audioBottleCollected.muted;
+//     audioThrowBottle.muted = !audioThrowBottle.muted;
+//     audioSplashBottle.muted = !audioSplashBottle.muted;
+// }
+
+
+// function toggleNoSoundBtn() {
+//     let img = document.getElementById('mute').src;
+
+//     if (img.indexOf('icons/audioOnIcon.png') != -1) {
+//         document.getElementById('mute').src = 'icons/audioOffIcon.png';
+//     } else {
+//         document.getElementById('mute').src = 'icons/audioOnIcon.png';
+//     }
+
+// }
 
 
 function openSteeringMenu() {

@@ -56,6 +56,6 @@ class ThrowableObject extends MovableObject {
             } else {
                 this.playAnimationMo(this.imagesSplashBottle);
             }
-        }, 1000 / 25);
+        }, 1000 / 20);
     }
 }

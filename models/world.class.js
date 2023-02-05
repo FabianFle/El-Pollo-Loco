@@ -119,7 +119,7 @@ class World {
         setStopableInterval(() => {
             this.checkThrowObjects();
             this.checkCollisionWithBottleEndboss();
-        }, 230);
+        }, 150);
     }
 
 

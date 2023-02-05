@@ -21,10 +21,6 @@ class Keyboard {
                 this.right = true;
             }
 
-            if (event.keyCode == 38) {
-                this.up = true;
-            }
-
             if (event.keyCode == 40) {
                 this.down = true;
             }
@@ -46,10 +42,6 @@ class Keyboard {
 
             if (event.keyCode == 39) {
                 this.right = false;
-            }
-
-            if (event.keyCode == 38) {
-                this.up = false;
             }
 
             if (event.keyCode == 40) {
