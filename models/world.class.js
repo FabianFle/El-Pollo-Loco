@@ -23,6 +23,7 @@ class World {
         this.setWorldWithCharacter();
         this.checkCollisionsWithMo();
         this.checkCollisionsWithThrowingBottle();
+        this.checkThrowObjects();
     }
 
 
@@ -49,8 +50,8 @@ class World {
         this.addObjectsToMap(this.level.coins);
         this.addObjectsToMap(this.level.bottles);
         this.ctx.translate(-this.cameraX, 0);
-        let self = this;                                  
-        requestAnimationFrame(() => {  
+        let self = this;
+        requestAnimationFrame(() => {
             self.draw();
         });
     }
@@ -110,7 +111,6 @@ class World {
 
     checkCollisionsWithThrowingBottle() {
         setStopableInterval(() => {
-            this.checkThrowObjects();
             this.checkCollisionWithBottleEndboss();
         }, 250);
     }
@@ -189,14 +189,16 @@ class World {
 
 
     checkThrowObjects() {
-        if (this.keyboard.a && this.maxBottlesToThrow > 0) {
-            let bottle = new ThrowableObject(this.character.x, this.character.y, this.character.otherDirection);
-            this.throwableObject.push(bottle);
-            audioThrowBottle.play();
-            this.maxBottlesToThrow--;
-            this.character.reduceProgressbarBottleThroughThrow();
-            this.statusbarBottle.setPercentage(this.character.progessBottleBar);
-        }
+        setStopableInterval(() => {
+            if (this.keyboard.a && this.maxBottlesToThrow > 0) {
+                let bottle = new ThrowableObject(this.character.x, this.character.y, this.character.otherDirection);
+                this.throwableObject.push(bottle);
+                audioThrowBottle.play();
+                this.maxBottlesToThrow--;
+                this.character.reduceProgressbarBottleThroughThrow();
+                this.statusbarBottle.setPercentage(this.character.progessBottleBar);
+            }
+        }, 1000 / 60);
     }
 
 
