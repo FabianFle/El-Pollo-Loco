@@ -154,7 +154,7 @@ canvas {
 }
 
 
-.audioOnIcon {
+.audioToggleIcon {
     width: 45px;
     height: 45px;
     position: absolute;
@@ -163,14 +163,14 @@ canvas {
 }
 
 
-.audioOnIcon:hover {
+.audioToggleIcon:hover {
     cursor: pointer;
     transition: 225ms ease-in-out;
     transform: scale(1.2);
 }
 
 
-.audioOffIcon {
+/* .audioOffIcon {
     width: 45px;
     height: 45px;
     position: absolute;
@@ -183,7 +183,7 @@ canvas {
     cursor: pointer;
     transition: 225ms ease-in-out;
     transform: scale(1.2);
-}
+} */
 
 
 .btnPlay {

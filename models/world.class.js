@@ -76,13 +76,6 @@ class World {
         if (mo.otherDirection) {
             this.flipImageBack(mo);
         }
-        // mo.drawFrameCharacter(this.ctx);
-        // mo.drawFrameCoins(this.ctx)
-        // mo.drawFrameBottles(this.ctx);
-        // mo.drawFrameThrowableBottle(this.ctx);
-        // mo.drawFrameChickenNormal(this.ctx);
-        // mo.drawFrameChickenSmall(this.ctx);
-        // mo.drawFrameEnboss(this.ctx);
     }
 
 
@@ -119,7 +112,7 @@ class World {
         setStopableInterval(() => {
             this.checkThrowObjects();
             this.checkCollisionWithBottleEndboss();
-        }, 150);
+        }, 250);
     }
 
 

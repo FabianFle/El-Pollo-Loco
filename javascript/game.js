@@ -51,7 +51,7 @@ function hideElementsInStartScreen() {
 
 
 function showSoundBtns() {
-    document.getElementById('audioOnIcon').classList.remove('d-none');
+    document.getElementById('audioToggleIcon').classList.remove('d-none');
 }
 
 
@@ -107,8 +107,7 @@ function showGameOverScreen() {
         document.getElementById('positionAbsoluteRight').classList.add('d-none');
         document.getElementById('gameOverScreenContainer').classList.remove('d-none');
         document.getElementById('canvas').classList.add('d-none');
-        document.getElementById('audioOffIcon').classList.add('d-none');
-        document.getElementById('audioOnIcon').classList.add('d-none');
+        document.getElementById('audioToggleIcon').classList.add('d-none');
         document.getElementById('enterFullscreenIcon').classList.add('d-none');
         document.getElementById('exitFullscreenIcon').classList.add('d-none');
         resetBackgroundMusic();
@@ -120,8 +119,7 @@ function showWinScreen() {
     setTimeout(() => {
         document.getElementById('winScreenContainer').classList.remove('d-none');
         document.getElementById('canvas').classList.add('d-none');
-        document.getElementById('audioOffIcon').classList.add('d-none');
-        document.getElementById('audioOnIcon').classList.add('d-none');
+        document.getElementById('audioToggleIcon').classList.add('d-none');
         document.getElementById('positionAbsoluteLeft').classList.add('d-none');
         document.getElementById('positionAbsoluteRight').classList.add('d-none');
         document.getElementById('enterFullscreenIcon').classList.add('d-none');
@@ -199,77 +197,40 @@ function removeStylesForFullScreen() {
 }
 
 
-function turnSoundOff() {
-    audioBackgroundMusicEndboss.muted = false;
-    audioBackgroundMusicInGame.muted = false;
-    audioDeadChicken.muted = false;
-    audioWalkCharacter.muted = false;
-    audioJumpCharacter.muted = false;
-    auidoHurtCharacter.muted = false;
-    audioGameLost.muted = false;
-    audioGameWin.muted = false;
-    audioCoinCollected.muted = false;
-    audioBottleCollected.muted = false;
-    audioThrowBottle.muted = false;
-    audioSplashBottle.muted = false;
-    document.getElementById('audioOnIcon').classList.remove('d-none');
-    document.getElementById('audioOffIcon').classList.add('d-none');
+function toggleMute() {
+    toggleNoSoundBtn();
+    audioBackgroundMusicEndboss.muted = !audioBackgroundMusicEndboss.muted;
+    audioBackgroundMusicInGame.muted = !audioBackgroundMusicInGame.muted;
+    audioDeadChicken.muted = !audioDeadChicken.muted;
+    audioWalkCharacter.muted = !audioWalkCharacter.muted;
+    audioJumpCharacter.muted = !audioJumpCharacter.muted;
+    auidoHurtCharacter.muted = !auidoHurtCharacter.muted;
+    audioGameLost.muted = !audioGameLost.muted;
+    audioGameWin.muted = !audioGameWin.muted;
+    audioCoinCollected.muted = !audioCoinCollected.muted;
+    audioBottleCollected.muted = !audioBottleCollected.muted;
+    audioThrowBottle.muted = !audioThrowBottle.muted;
+    audioSplashBottle.muted = !audioSplashBottle.muted;
 }
 
 
-function turnSoundOn() {
-    audioBackgroundMusicEndboss.muted = true;
-    audioBackgroundMusicInGame.muted = true;
-    audioDeadChicken.muted = true;
-    audioWalkCharacter.muted = true;
-    audioJumpCharacter.muted = true;
-    auidoHurtCharacter.muted = true;
-    audioGameLost.muted = true;
-    audioGameWin.muted = true;
-    audioCoinCollected.muted = true;
-    audioBottleCollected.muted = true;
-    audioThrowBottle.muted = true;
-    audioSplashBottle.muted = true;
-    document.getElementById('audioOffIcon').classList.remove('d-none');
-    document.getElementById('audioOnIcon').classList.add('d-none');
+function toggleNoSoundBtn() {
+    let img = document.getElementById('audioToggleIcon').src;
+
+    if (img.indexOf('icons/audioOnIcon.png') != -1) {
+        document.getElementById('audioToggleIcon').src = 'icons/audioOffIcon.png';
+    } else {
+        document.getElementById('audioToggleIcon').src = 'icons/audioOnIcon.png';
+    }
+
 }
-
-
-// function toggleMute() {
-//     toggleNoSoundBtn();
-//     audioBackgroundMusicEndboss.muted = !audioBackgroundMusicEndboss.muted;
-//     audioBackgroundMusicInGame.muted = !audioBackgroundMusicInGame.muted;
-//     audioDeadChicken.muted = !audioDeadChicken.muted;
-//     audioWalkCharacter.muted = !audioWalkCharacter.muted;
-//     audioJumpCharacter.muted = !audioJumpCharacter.muted;
-//     auidoHurtCharacter.muted = !auidoHurtCharacter.muted;
-//     audioGameLost.muted = !audioGameLost.muted;
-//     audioGameWin.muted = !audioGameWin.muted;
-//     audioCoinCollected.muted = !audioCoinCollected.muted;
-//     audioBottleCollected.muted = !audioBottleCollected.muted;
-//     audioThrowBottle.muted = !audioThrowBottle.muted;
-//     audioSplashBottle.muted = !audioSplashBottle.muted;
-// }
-
-
-// function toggleNoSoundBtn() {
-//     let img = document.getElementById('mute').src;
-
-//     if (img.indexOf('icons/audioOnIcon.png') != -1) {
-//         document.getElementById('mute').src = 'icons/audioOffIcon.png';
-//     } else {
-//         document.getElementById('mute').src = 'icons/audioOnIcon.png';
-//     }
-
-// }
 
 
 function openSteeringMenu() {
     document.getElementById('startScreen').classList.add('d-none');
     document.getElementById('containerGameControlls').classList.remove('d-none');
     document.getElementById('btnPlay').classList.add('d-none');
-    document.getElementById('audioOffIcon').classList.add('d-none');
-    document.getElementById('audioOnIcon').classList.add('d-none');
+    document.getElementById('audioToggleIcon').classList.add('d-none');
     document.getElementById('steeringIcon').classList.add('d-none');
     document.getElementById('arrowBackGameControlls').classList.remove('d-none');
 }
@@ -282,6 +243,5 @@ function closeSteeringMenu() {
     document.getElementById('btnPlay').classList.remove('d-none');
     document.getElementById('audioOffIcon').classList.remove('d-none');
     document.getElementById('steeringIcon').classList.remove('d-none');
-    document.getElementById('audioOffIcon').classList.add('d-none');
-    document.getElementById('audioOnIcon').classList.add('d-none');
+    document.getElementById('audioToggleIcon').classList.add('d-none');
 }
