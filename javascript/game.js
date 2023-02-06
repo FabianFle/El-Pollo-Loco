@@ -241,7 +241,6 @@ function closeSteeringMenu() {
     document.getElementById('arrowBackGameControlls').classList.add('d-none');
     document.getElementById('startScreen').classList.remove('d-none');
     document.getElementById('btnPlay').classList.remove('d-none');
-    document.getElementById('audioOffIcon').classList.remove('d-none');
     document.getElementById('steeringIcon').classList.remove('d-none');
     document.getElementById('audioToggleIcon').classList.add('d-none');
 }

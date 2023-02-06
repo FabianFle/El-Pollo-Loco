@@ -32,13 +32,8 @@
 
 
 @media (max-width: 690px) {
-    .audioOffIcon {
-        width: 40px;
-        height: 40px;
-        right: 61px;
-    }
 
-    .audioOnIcon {
+    .audioToggleIcon {
         width: 40px;
         height: 40px;
         right: 60px;
@@ -77,21 +72,16 @@
 
 
 @media (max-width: 550px) {
-    .audioOffIcon {
-        width: 35px;
-        height: 35px;
-        right: 51px;
-    }
 
-    .audioOnIcon {
-        width: 35px;
-        height: 35px;
-        right: 50px;
+    .audioToggleIcon {
+        width: 30px;
+        height: 30px;
+        right: 45px;
     }
 
     .enterFullscreenIcon {
-        width: 25px;
-        height: 25px;
+        width: 22px;
+        height: 22px;
         right: 12px;
     }
 
@@ -133,21 +123,16 @@
 
 
 @media (max-width: 450px) {
-    .audioOffIcon {
-        width: 30px;
-        height: 30px;
-        right: 46px;
-    }
 
-    .audioOnIcon {
-        width: 30px;
-        height: 30px;
-        right: 45px;
+    .audioToggleIcon {
+        width: 25px;
+        height: 25px;
+        right: 43px;
     }
 
     .enterFullscreenIcon {
-        width: 22px;
-        height: 22px;
+        width: 19px;
+        height: 19px;
         right: 10px;
     }
 
@@ -171,21 +156,16 @@
 
 
 @media (max-width: 370px) {
-    .audioOffIcon {
-        width: 27px;
-        height: 27px;
-        right: 43px;
-    }
 
-    .audioOnIcon {
-        width: 27px;
-        height: 27px;
-        right: 42px;
+    .audioToggleIcon {
+        width: 20px;
+        height: 20px;
+        right: 32px;
     }
 
     .enterFullscreenIcon {
-        width: 20px;
-        height: 20px;
+        width: 15px;
+        height: 15px;
         right: 10px;
         top: 12px;
     }
@@ -209,21 +189,16 @@
 
 
 @media (max-width: 300px) {
-    .audioOffIcon {
-        width: 22px;
-        height: 22px;
-        right: 39px;
-    }
 
-    .audioOnIcon {
-        width: 22px;
-        height: 22px;
-        right: 38px;
+    .audioToggleIcon {
+        width: 15px;
+        height: 15px;
+        right: 32px;
     }
 
     .enterFullscreenIcon {
-        width: 17px;
-        height: 17px;
+        width: 12px;
+        height: 12px;
         right: 10px;
         top: 11px;
     }
