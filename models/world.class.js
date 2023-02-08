@@ -12,6 +12,7 @@ class World {
     ctx;
     keyboard;
     cameraX = 0;
+    lastLot = 0;
     intervalIds = [];
 
 
@@ -197,8 +198,20 @@ class World {
                 this.maxBottlesToThrow--;
                 this.character.reduceProgressbarBottleThroughThrow();
                 this.statusbarBottle.setPercentage(this.character.progessBottleBar);
-            }
+            } 
         }, 1000 / 60);
+    }
+
+
+    isLastLot() {
+        let timepassed = new Date().getTime() - this.lastLot;
+        timepassed = timepassed / 1000;
+        return timepassed < 10;
+    }
+
+
+    isLastLotTimeSet() {
+        this.lastHit = new Date().getTime();
     }
 
 
