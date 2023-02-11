@@ -12,7 +12,7 @@ class World {
     ctx;
     keyboard;
     cameraX = 0;
-    lastLot = 0;
+    lastLitter = 1;
     intervalIds = [];
 
 
@@ -191,27 +191,20 @@ class World {
 
     checkThrowObjects() {
         setStopableInterval(() => {
-            if (this.keyboard.a && this.maxBottlesToThrow > 0) {
+            if (this.keyboard.a && this.maxBottlesToThrow > 0 && this.lastLitter == 0) {
                 let bottle = new ThrowableObject(this.character.x, this.character.y, this.character.otherDirection);
                 this.throwableObject.push(bottle);
                 audioThrowBottle.play();
                 this.maxBottlesToThrow--;
                 this.character.reduceProgressbarBottleThroughThrow();
                 this.statusbarBottle.setPercentage(this.character.progessBottleBar);
-            } 
+            } else {
+                setTimeout(() => {
+                    this.lastLitter = 0
+                    console.log(this.lastLitter)
+                }, 1000);
+            }
         }, 1000 / 60);
-    }
-
-
-    isLastLot() {
-        let timepassed = new Date().getTime() - this.lastLot;
-        timepassed = timepassed / 1000;
-        return timepassed < 10;
-    }
-
-
-    isLastLotTimeSet() {
-        this.lastHit = new Date().getTime();
     }
 
 
