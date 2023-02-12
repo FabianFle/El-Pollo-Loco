@@ -12,7 +12,7 @@ class World {
     ctx;
     keyboard;
     cameraX = 0;
-    lastLitter = 1;
+    lastLitter = false;
     intervalIds = [];
 
 
@@ -24,7 +24,7 @@ class World {
         this.setWorldWithCharacter();
         this.checkCollisionsWithMo();
         this.checkCollisionsWithThrowingBottle();
-        this.checkThrowObjects();
+        this.checkTimerForLitter();
     }
 
 
@@ -117,6 +117,13 @@ class World {
     }
 
 
+    checkTimerForLitter() {
+        setStopableInterval(() => {
+            this.checkThrowObjects();
+        }, 1000/60);
+    }
+
+
     checkCollisionsChicken() {
         this.level.enemies.forEach(enemy => {
             if (this.character.isColliding(enemy) && !this.character.isHurtCharacter()) {
@@ -190,21 +197,30 @@ class World {
 
 
     checkThrowObjects() {
-        setStopableInterval(() => {
-            if (this.keyboard.a && this.maxBottlesToThrow > 0 && this.lastLitter == 0) {
-                let bottle = new ThrowableObject(this.character.x, this.character.y, this.character.otherDirection);
-                this.throwableObject.push(bottle);
-                audioThrowBottle.play();
-                this.maxBottlesToThrow--;
-                this.character.reduceProgressbarBottleThroughThrow();
-                this.statusbarBottle.setPercentage(this.character.progessBottleBar);
-            } else {
-                setTimeout(() => {
-                    this.lastLitter = 0
-                    console.log(this.lastLitter)
-                }, 1000);
-            }
-        }, 1000 / 60);
+        if (this.keyboard.a && this.maxBottlesToThrow > 0 && !this.lastLitter) {
+            this.checkThrowObjectsFunktion();
+        } else {
+            this.timerForLitter();
+        }
+    }
+
+
+    checkThrowObjectsFunktion() {
+        this.lastLitter = true;
+        let bottle = new ThrowableObject(this.character.x, this.character.y, this.character.otherDirection);
+        this.throwableObject.push(bottle);
+        audioThrowBottle.play();
+        this.maxBottlesToThrow--;
+        this.character.reduceProgressbarBottleThroughThrow();
+        this.statusbarBottle.setPercentage(this.character.progessBottleBar);
+    }
+
+
+    timerForLitter() {
+        setTimeout(() => {
+            this.lastLitter = false;
+            console.log(this.lastLitter)
+        }, 1000);
     }
 
 
