@@ -58,6 +58,7 @@ function showSoundBtns() {
 function showMobileBtns() {
     document.getElementById('positionAbsoluteLeft').classList.remove('d-none');
     document.getElementById('positionAbsoluteRight').classList.remove('d-none');
+    document.getElementById('infoForTheSmartphonDiv').classList.remove('d-none');
 }
 
 
@@ -95,6 +96,7 @@ function goBackToStartScreen() {
     document.getElementById('btnPlay').classList.remove('d-none');
     document.getElementById('positionAbsoluteLeft').classList.add('d-none');
     document.getElementById('positionAbsoluteRight').classList.add('d-none');
+    document.getElementById('infoForTheSmartphonDiv').classList.add('d-none');
     document.getElementById('steeringIcon').classList.remove('d-none');
     closeFullscreen();
     resetBackgroundMusic();
@@ -105,6 +107,7 @@ function showGameOverScreen() {
     setTimeout(() => {
         document.getElementById('positionAbsoluteLeft').classList.add('d-none');
         document.getElementById('positionAbsoluteRight').classList.add('d-none');
+        document.getElementById('infoForTheSmartphonDiv').classList.add('d-none');
         document.getElementById('gameOverScreenContainer').classList.remove('d-none');
         document.getElementById('canvas').classList.add('d-none');
         document.getElementById('audioToggleIcon').classList.add('d-none');
@@ -122,6 +125,7 @@ function showWinScreen() {
         document.getElementById('audioToggleIcon').classList.add('d-none');
         document.getElementById('positionAbsoluteLeft').classList.add('d-none');
         document.getElementById('positionAbsoluteRight').classList.add('d-none');
+        document.getElementById('infoForTheSmartphonDiv').classList.add('d-none');
         document.getElementById('enterFullscreenIcon').classList.add('d-none');
         document.getElementById('exitFullscreenIcon').classList.add('d-none');
         resetBackgroundMusic();
@@ -169,6 +173,7 @@ function addStylesForFullScreen() {
     document.getElementById('gameOverScreen').classList.add('gameOverScreenFullScreen');
     document.getElementById('positionAbsoluteLeft').classList.add('d-none');
     document.getElementById('positionAbsoluteRight').classList.add('d-none');
+    document.getElementById('infoForTheSmartphonDiv').classList.add('d-none');
 }
 
 
@@ -194,6 +199,7 @@ function removeStylesForFullScreen() {
     document.getElementById('gameOverScreen').classList.remove('gameOverScreenFullScreen');
     document.getElementById('positionAbsoluteLeft').classList.remove('d-none');
     document.getElementById('positionAbsoluteRight').classList.remove('d-none');
+    document.getElementById('infoForTheSmartphonDiv').classList.remove('d-none');
 }
 
 

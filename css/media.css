@@ -256,6 +256,20 @@
 }
 
 
+@media (max-height: 555px) {
+    .infoForTheSmartphonDiv {
+        display: none;
+    }
+}
+
+
+@media (min-width: 819px) {
+    .infoForTheSmartphonDiv {
+        display: none;
+    }
+}
+
+
 @media (max-width: 500px) {
     .btnPlay {
         width: 28px;
