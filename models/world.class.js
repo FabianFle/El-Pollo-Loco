@@ -13,6 +13,7 @@ class World {
     keyboard;
     cameraX = 0;
     lastLitter = false;
+    alreadyThrow =  false;
     intervalIds = [];
 
 
@@ -120,7 +121,7 @@ class World {
     checkTimerForLitter() {
         setStopableInterval(() => {
             this.checkThrowObjects();
-        }, 1000/60);
+        }, 1000 / 60);
     }
 
 
@@ -198,6 +199,7 @@ class World {
 
     checkThrowObjects() {
         if (this.keyboard.a && this.maxBottlesToThrow > 0 && !this.lastLitter) {
+            this.alreadyThrow = true;
             this.checkThrowObjectsFunktion();
         } else {
             this.timerForLitter();
@@ -217,10 +219,12 @@ class World {
 
 
     timerForLitter() {
-        setTimeout(() => {
-            this.lastLitter = false;
-            console.log(this.lastLitter)
-        }, 1000);
+        if (this.alreadyThrow) {
+            this.alreadyThrow = false;
+            setTimeout(() => {
+                this.lastLitter = false;
+            }, 1000);
+        }
     }
 
 
