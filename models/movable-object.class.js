@@ -30,6 +30,10 @@ class MovableObject extends DrawableObject {
             this.y + this.offset.top < mo.y + mo.height - mo.offset.bottom;       //      bottom > top =>   Collision top  
     }
 
+
+    /**
+    * If the character has been damaged, 10 life points are deducted
+    */
     hitCharacter() {
         this.energy -= 10;
         if (this.energy < 0) {
@@ -40,6 +44,9 @@ class MovableObject extends DrawableObject {
     }
 
 
+    /**
+    * If the final boss has been damaged, 10 life points are deducted
+    */
     hitEndboss() {
         this.energy -= 10;
         if (this.energy < 0) {
@@ -50,21 +57,33 @@ class MovableObject extends DrawableObject {
     }
 
 
+    /**
+    * coinsbar is increased by 5 points
+    */
     raiseProgressbarCoin() {
         this.progessCoinBar += 5;
     }
 
 
+    /**
+    * bottle bar is increased by 10 points
+    */
     raiseProgressbarBottle() {
         this.progessBottleBar += 10;
     }
 
 
+    /**
+    * bottle bar is minimized by 10 points
+    */
     reduceProgressbarBottleThroughThrow() {
         this.progessBottleBar -= 10;
     }
 
 
+    /**
+    * When was the last time the character was damaged?
+    */
     isHurtCharacter() {
         let timepassed = new Date().getTime() - this.lastHit;
         timepassed = timepassed / 1000;
@@ -72,6 +91,9 @@ class MovableObject extends DrawableObject {
     }
 
 
+    /**
+    * When was the last time the final boss got damaged?
+    */
     isHurtEndboss() {
         let timepassed = new Date().getTime() - this.lastHit;
         timepassed = timepassed / 1000;
@@ -89,6 +111,9 @@ class MovableObject extends DrawableObject {
     }
 
 
+    /**
+    * animation of the images
+    */
     playAnimationMo(images) {
         let i = this.currentImage % images.length;
         let path = images[i];
@@ -107,6 +132,9 @@ class MovableObject extends DrawableObject {
     }
 
 
+    /**
+    * Gravity in the game
+    */
     addGravity() {
         setStopableInterval(() => {
             if (this.isAboveGround() || this.isNotAboveGround()) {

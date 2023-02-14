@@ -13,7 +13,7 @@ class World {
     keyboard;
     cameraX = 0;
     lastLitter = false;
-    alreadyThrow =  false;
+    alreadyThrow = false;
     intervalIds = [];
 
 
@@ -125,6 +125,9 @@ class World {
     }
 
 
+    /**
+    * it is checked whether one has come into contact with the chicken or the small chicken
+    */
     checkCollisionsChicken() {
         this.level.enemies.forEach(enemy => {
             if (this.character.isColliding(enemy) && !this.character.isHurtCharacter()) {
@@ -139,6 +142,9 @@ class World {
     }
 
 
+    /**
+    * If you jump on the chicken it will be killed by it
+    */
     killChickenWithJumpFromTop(enemy) {
         enemy.chickenKilled();
         this.character.speedY = 30;
@@ -150,6 +156,9 @@ class World {
     }
 
 
+    /**
+    * Function for checking if you came in contact with the end boss
+    */
     checkCollisionsEndboss() {
         this.level.endboss.forEach(endboss => {
             if (this.character.isColliding(endboss)) {
@@ -160,6 +169,9 @@ class World {
     }
 
 
+    /**
+    * Checking whether you came into contact with a coin
+    */
     checkCollectedCoins() {
         this.level.coins.forEach((coin) => {
             if (this.character.isCollected(coin)) {
@@ -172,12 +184,18 @@ class World {
     }
 
 
+    /**
+    * coin number is increased when you touch the coins
+    */
     coinCollected(coin) {
         let i = this.level.coins.indexOf(coin);
         this.level.coins.splice(i, 1);
     }
 
 
+    /**
+    * contact with the bottles is tested
+    */
     checkCollectedBottles() {
         this.level.bottles.forEach((bottle) => {
             if (this.character.isCollected(bottle)) {
@@ -190,6 +208,9 @@ class World {
     }
 
 
+    /**
+    * bottle number is increased when you touch the bottles
+    */
     bottleCollected(bottle) {
         let i = this.level.bottles.indexOf(bottle);
         this.level.bottles.splice(i, 1);
@@ -197,6 +218,9 @@ class World {
     }
 
 
+    /**
+    * check if a bottle is thrown
+    */
     checkThrowObjects() {
         if (this.keyboard.a && this.maxBottlesToThrow > 0 && !this.lastLitter) {
             this.alreadyThrow = true;
@@ -207,6 +231,9 @@ class World {
     }
 
 
+    /**
+    * animation of the bottle when it is thrown as well as playing a sound and checking if there are enough bottles left.
+    */
     checkThrowObjectsFunktion() {
         this.lastLitter = true;
         let bottle = new ThrowableObject(this.character.x, this.character.y, this.character.otherDirection);
@@ -218,16 +245,22 @@ class World {
     }
 
 
+    /**
+    * timer to check when the next bottle can be thrown.
+    */
     timerForLitter() {
         if (this.alreadyThrow) {
             this.alreadyThrow = false;
             setTimeout(() => {
                 this.lastLitter = false;
-            }, 1000);
+            }, 500);
         }
     }
 
 
+    /**
+    * check if the enboss has come into contact with the bottle
+    */
     checkCollisionWithBottleEndboss() {
         this.throwableObject.forEach((bottle) => {
             this.level.endboss.forEach(endboss => {
@@ -244,6 +277,9 @@ class World {
     }
 
 
+    /**
+    * plays the sound when the end boss is hit
+    */
     playSoundEnbossHit() {
         audioSplashBottle.volume = 0.2;
         audioSplashBottle.play();
@@ -252,12 +288,18 @@ class World {
     }
 
 
+    /**
+    * when a chicken has died it is removed with this function
+    */
     eraseEnemyFromArray(enemy) {
         let i = this.level.enemies.indexOf(enemy);
         this.level.enemies.splice(i, 1);
     }
 
 
+    /**
+    * when the bottle has hit the endboss it will be removed with this function
+    */
     eraseThrowingBottleFromArray(bottle) {
         let i = this.throwableObject.indexOf(bottle);
         this.throwableObject.splice(i, 1);

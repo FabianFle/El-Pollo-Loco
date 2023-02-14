@@ -35,6 +35,9 @@ class ThrowableObject extends MovableObject {
     }
 
 
+    /**
+    * Gravity for the bottles so they fall down too
+    */
     addGravityToBottle() {
         this.speedY = 20;
         this.addGravity();
@@ -48,7 +51,7 @@ class ThrowableObject extends MovableObject {
         }, 25);
     }
 
-
+    
     animateBottle() {
         setStopableInterval(() => {
             if (!world.level.endboss[0].isHurtEndboss()) {

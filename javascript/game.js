@@ -16,6 +16,10 @@ let audioBackgroundMusicEndboss = new Audio('audio/EndbossMusic.mp3');
 let intervalIds = [];
 
 
+/**
+* 
+* 
+*/
 function startGame() {
     showLoadingScreen();
     setTimeout(() => {
@@ -32,16 +36,25 @@ function startGame() {
 }
 
 
+/**
+* Makes the loading screen appear
+*/
 function showLoadingScreen() {
     document.getElementById('loadingScreenContainer').classList.remove('hide');
 }
 
-
+ 
+/**
+* Makes the loading screen disappear
+*/
 function closeLoadingScreen() {
     document.getElementById('loadingScreenContainer').classList.add('hide');
 }
 
 
+/**
+* All elements disappear so that the game can be started
+*/
 function hideElementsInStartScreen() {
     document.getElementById('startScreen').classList.add('d-none');
     document.getElementById('canvas').classList.remove('d-none');
@@ -50,11 +63,17 @@ function hideElementsInStartScreen() {
 }
 
 
+/**
+* Makes the buttons appear for the music setting
+*/
 function showSoundBtns() {
     document.getElementById('audioToggleIcon').classList.remove('d-none');
 }
 
 
+/**
+* Makes the touchbuttons appear
+*/
 function showMobileBtns() {
     document.getElementById('positionAbsoluteLeft').classList.remove('d-none');
     document.getElementById('positionAbsoluteRight').classList.remove('d-none');
@@ -62,11 +81,17 @@ function showMobileBtns() {
 }
 
 
+/**
+* Lets show the fullscreen button
+*/
 function showFullscreenBtn() {
     document.getElementById('enterFullscreenIcon').classList.remove('d-none');
 }
 
 
+/**
+* plays the background music
+*/
 function playBackgroundMusic() {
     audioBackgroundMusicInGame.volume = 0.2;
     audioBackgroundMusicInGame.play();
@@ -87,6 +112,9 @@ function restartGame() {
 }
 
 
+/**
+* The game will exit and the start screen will be displayed
+*/
 function goBackToStartScreen() {
     clearAllIntervals();
     document.getElementById('canvas').classList.add('d-none');
@@ -103,6 +131,9 @@ function goBackToStartScreen() {
 }
 
 
+/**
+* Displays the Game Over screen
+*/
 function showGameOverScreen() {
     setTimeout(() => {
         document.getElementById('positionAbsoluteLeft').classList.add('d-none');
@@ -118,6 +149,9 @@ function showGameOverScreen() {
 }
 
 
+/**
+* Displays the Win screen
+*/
 function showWinScreen() {
     setTimeout(() => {
         document.getElementById('winScreenContainer').classList.remove('d-none');
@@ -133,6 +167,9 @@ function showWinScreen() {
 }
 
 
+/**
+* Background music is reset
+*/
 function resetBackgroundMusic() {
     audioBackgroundMusicInGame.currentTime = 0;
     audioBackgroundMusicEndboss.currentTime = 0;
@@ -141,17 +178,26 @@ function resetBackgroundMusic() {
 }
 
 
+/**
+* sets the in interval
+*/
 function setStopableInterval(fn, time) {
     let idIntervall = setInterval(fn, time);
     intervalIds.push(idIntervall);
 }
 
 
+/**
+* resets the in interval
+*/
 function clearAllIntervals() {
     for (let i = 1; i < 9999; i++)  window.clearInterval(i);
 }
 
 
+/**
+* opens the fullscreen
+*/
 function openFullscreen() {
     let fullScreen = document.getElementById('fullScreen');
     if (fullScreen.requestFullscreen) {
@@ -165,6 +211,9 @@ function openFullscreen() {
 }
 
 
+/**
+* creates the design for the fullscreen
+*/
 function addStylesForFullScreen() {
     document.getElementById('enterFullscreenIcon').classList.add('d-none');
     document.getElementById('exitFullscreenIcon').classList.remove('d-none');
@@ -177,6 +226,9 @@ function addStylesForFullScreen() {
 }
 
 
+/**
+* close the design for the fullscreen
+*/
 function closeFullscreen() {
     if (document.fullscreenElement || document.webkitFullscreenElement || document.msFullscreenElement) {
         if (document.exitFullscreen) {
@@ -191,6 +243,9 @@ function closeFullscreen() {
 }
 
 
+/**
+* close the fullscreen
+*/
 function removeStylesForFullScreen() {
     document.getElementById('enterFullscreenIcon').classList.remove('d-none');
     document.getElementById('exitFullscreenIcon').classList.add('d-none');
@@ -203,6 +258,9 @@ function removeStylesForFullScreen() {
 }
 
 
+/**
+* Turn on or off the sounds / music
+*/
 function toggleMute() {
     toggleNoSoundBtn();
     audioBackgroundMusicEndboss.muted = !audioBackgroundMusicEndboss.muted;
@@ -220,6 +278,9 @@ function toggleMute() {
 }
 
 
+/**
+* changes the icon in the game from muted and unmuted 
+*/
 function toggleNoSoundBtn() {
     let img = document.getElementById('audioToggleIcon').src;
 
@@ -232,6 +293,9 @@ function toggleNoSoundBtn() {
 }
 
 
+/**
+* opens the information window
+*/
 function openSteeringMenu() {
     document.getElementById('startScreen').classList.add('d-none');
     document.getElementById('containerGameControlls').classList.remove('d-none');
@@ -239,9 +303,15 @@ function openSteeringMenu() {
     document.getElementById('audioToggleIcon').classList.add('d-none');
     document.getElementById('steeringIcon').classList.add('d-none');
     document.getElementById('arrowBackGameControlls').classList.remove('d-none');
+    document.getElementById('positionAbsoluteLeft').classList.add('d-none');
+    document.getElementById('positionAbsoluteRight').classList.add('d-none');
+    document.getElementById('infoForTheSmartphonDiv').classList.add('d-none');
 }
 
 
+/**
+* close the information window
+*/
 function closeSteeringMenu() {
     document.getElementById('containerGameControlls').classList.add('d-none');
     document.getElementById('arrowBackGameControlls').classList.add('d-none');
@@ -249,4 +319,7 @@ function closeSteeringMenu() {
     document.getElementById('btnPlay').classList.remove('d-none');
     document.getElementById('steeringIcon').classList.remove('d-none');
     document.getElementById('audioToggleIcon').classList.add('d-none');
+    document.getElementById('positionAbsoluteLeft').classList.remove('d-none');
+    document.getElementById('positionAbsoluteRight').classList.remove('d-none');
+    document.getElementById('infoForTheSmartphonDiv').classList.remove('d-none');
 }

@@ -10,6 +10,9 @@ class Statusbar extends DrawableObject {
     }
 
 
+    /**
+    * different display levels
+    */
     showImageIndex(percentage) {
         if (percentage == 50) {
             return 5;

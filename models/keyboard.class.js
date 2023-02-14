@@ -11,6 +11,9 @@ class Keyboard {
     }
 
 
+    /**
+    * check whether the button is pressed
+    */
     eventKeyboardBtns() {
         window.addEventListener('keydown', (event) => {
             if (event.keyCode == 37) {
@@ -35,6 +38,9 @@ class Keyboard {
         });
 
 
+        /**
+        * check whether the button has been released
+        */
         window.addEventListener('keyup', (event) => {
             if (event.keyCode == 37) {
                 this.left = false;
@@ -59,6 +65,9 @@ class Keyboard {
     }
 
 
+    /**
+    * Functions for the touch buttons in the mobile view
+    */
     eventTouchpadBtns() {
         setTimeout(() => {
             document.getElementById('btnMobileLeft').addEventListener('touchstart', (event) => {

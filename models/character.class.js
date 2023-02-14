@@ -90,6 +90,9 @@ class Character extends MovableObject {
     }
 
 
+    /**
+    * Function query where the character is currently and in which direction he wants to go
+    */
     characterMove() {
         if (this.characterCanMoveRight())
             this.characterMoveRight();
@@ -106,6 +109,9 @@ class Character extends MovableObject {
     }
 
 
+    /**
+    * function looks at what the character is doing
+    */
     playCharacter() {
         if (this.isHurtCharacter()) {
             this.characterHurt()
@@ -171,6 +177,9 @@ class Character extends MovableObject {
     }
 
 
+    /**
+    * The game is lost
+    */
     gameIsLost() {
         this.playAnimationMo(this.imagesDeadCharacter);
         audioGameLost.play();
@@ -192,6 +201,9 @@ class Character extends MovableObject {
     }
 
 
+    /**
+    * Time indication when the character last ran
+    */
     getUnixTimeStamp() {
         this.characterLastMovement = new Date().getTime();
     }

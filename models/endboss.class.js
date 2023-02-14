@@ -62,6 +62,9 @@ class Endboss extends MovableObject {
     }
 
 
+    /**
+    * Animations of the final boss as well as playing the background music
+    */
     animateEndboss() {
         let i = 0;
         setStopableInterval(() => {
@@ -76,6 +79,9 @@ class Endboss extends MovableObject {
     }
 
 
+    /**
+    * Endboss Moves, Hit, Dead
+    */
     playEndboss(i) {
         if (i < 15) {
             this.playAnimationMo(this.imagesAlertEndboss);
@@ -94,6 +100,9 @@ class Endboss extends MovableObject {
     }
 
 
+    /**
+    * game is won
+    */
     gameIsWin() {
         audioGameWin.play();
         clearAllIntervals();
@@ -102,6 +111,9 @@ class Endboss extends MovableObject {
     }
 
 
+    /**
+    * Plays background music on the final boss
+    */
     playBackgroundMusicEndboss() {
         audioBackgroundMusicEndboss.volume = 0.2;
         audioBackgroundMusicEndboss.play();
@@ -110,16 +122,25 @@ class Endboss extends MovableObject {
     }
 
 
+    /**
+    * Position where the final boss is created
+    */
     endbossReached() {
         return world.character.x > 3800 && !this.hadFirstContact;
     }
 
 
+    /**
+    * Distance to final boss where he starts attacking
+    */
     endbossFightBegins() {
         return world.character.x > world.level.endboss[0].x - 1000;
     }
 
 
+    /**
+    * When the boss is attacked, he gets a small speed boost
+    */
     endBossRushForward() {
         let speedIncreaseThroughHit = world.level.endboss[0].x -= this.speedThroughHit;
         return speedIncreaseThroughHit;

@@ -22,7 +22,7 @@ class NormalChicken extends MovableObject {
         this.animateChickenNormal();
     }
 
-
+    
     animateChickenNormal() {
         let intervalNormalChicken = setInterval(() => {
             this.moveLeft();
